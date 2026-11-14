@@ -1,0 +1,52 @@
+# autonomousaiemployees.com
+
+> A catalog of AI employee roles by category. Each role page covers what the role handles, what access it needs, what stays human, how to measure it, and estimated monthly model spend at three price tiers.
+
+This site is a reference catalog, not a product page. Roles are described with their limits included. Where a role is a poor fit, the page says so.
+
+## Categories
+
+- [Marketing & Growth](https://autonomousaiemployees.com/categories/marketing-growth): Roles that produce, distribute and measure demand. The most commonly deployed AI employees, because the work is high-volume, text-heavy and already instrumented with analytics. (4 roles)
+- [Sales & Revenue](https://autonomousaiemployees.com/categories/sales-revenue): Research, outbound and post-sale roles where the bottleneck is time spent reading and writing rather than talking. (3 roles)
+- [Customer Support](https://autonomousaiemployees.com/categories/customer-support): Tier-one triage, deflection and internal IT support, where volume is high and the answer is usually already written down somewhere. (3 roles)
+- [Finance & Operations](https://autonomousaiemployees.com/categories/finance-operations): Back-office roles built on documents, reconciliations and recurring reports, where correctness is checkable and the audit trail matters more than speed. (3 roles)
+- [People & Recruiting](https://autonomousaiemployees.com/categories/people-recruiting): Sourcing, screening logistics and onboarding coordination, where the work is scheduling and summarising rather than judging people. (2 roles)
+- [Data & Analytics](https://autonomousaiemployees.com/categories/data-analytics): Analysis, reporting and research roles where the output is a written answer to a question rather than a dashboard nobody opens. (2 roles)
+- [Admin & Executive](https://autonomousaiemployees.com/categories/admin-executive): Calendar, inbox, meeting and coordination roles, the highest-frequency, lowest-glory work in any company. (2 roles)
+- [Engineering & Product](https://autonomousaiemployees.com/categories/engineering-product): Testing, review and documentation roles that sit next to the codebase without owning it. (3 roles)
+
+## Roles
+
+- [SEO Analyst](https://autonomousaiemployees.com/roles/seo-analyst): Runs keyword research, technical audits and content briefs on a schedule, and reports what changed rather than dumping a spreadsheet.
+- [Content Writer](https://autonomousaiemployees.com/roles/content-writer): Turns an approved brief into a first draft in your voice, with sources cited and claims flagged for checking.
+- [Social Media Manager](https://autonomousaiemployees.com/roles/social-media-manager): Fills the calendar, adapts each idea per platform, drafts replies and reports what actually got engagement.
+- [Email Marketer](https://autonomousaiemployees.com/roles/email-marketer): Builds segments, writes sequences, tests subject lines and reports revenue per send instead of open rates.
+- [Sales Researcher](https://autonomousaiemployees.com/roles/sales-researcher): Builds the pre-call brief: company context, recent changes, likely stakeholders and a specific opening angle.
+- [SDR (Outbound)](https://autonomousaiemployees.com/roles/sdr-outbound): Drafts personalised outbound from real research and runs the follow-up cadence, with human approval on every send.
+- [Proposal Writer](https://autonomousaiemployees.com/roles/proposal-writer): Assembles proposals and RFP responses from discovery notes, past wins and a pricing sheet, with every claim traceable.
+- [Customer Support Agent](https://autonomousaiemployees.com/roles/customer-support-agent): Triages every inbound ticket, drafts answers from your docs, and escalates anything involving money, anger or legal risk.
+- [IT Helpdesk Agent](https://autonomousaiemployees.com/roles/it-helpdesk-agent): Handles internal IT requests end to end where safe, and assembles the context for the ones that need a person.
+- [Support QA Analyst](https://autonomousaiemployees.com/roles/support-qa-analyst): Reads 100 percent of support conversations, scores them against your rubric, and reports the patterns behind the scores.
+- [Accounts Payable Clerk](https://autonomousaiemployees.com/roles/ap-clerk): Reads invoices, matches them to POs and receipts, and queues only the exceptions for human review.
+- [Reconciliation Analyst](https://autonomousaiemployees.com/roles/reconciliation-analyst): Reconciles ledger, bank and processor data, and explains each break with a likely cause and a suggested fix.
+- [Procurement Analyst](https://autonomousaiemployees.com/roles/procurement-analyst): Tracks SaaS contracts and renewals, finds unused licences and duplicate tools, and prepares the negotiation brief.
+- [Recruiter / Sourcer](https://autonomousaiemployees.com/roles/recruiter-sourcer): Builds sourcing lists, writes candidate outreach, schedules interviews and keeps the pipeline moving without dropping people.
+- [Onboarding Coordinator](https://autonomousaiemployees.com/roles/onboarding-coordinator): Runs the onboarding checklist end to end, chases the blockers, and reports who is not ready before day one.
+- [Data Analyst](https://autonomousaiemployees.com/roles/data-analyst): Answers business questions from your warehouse, writes the query, and shows the work so every number is checkable.
+- [Reporting Analyst](https://autonomousaiemployees.com/roles/reporting-analyst): Assembles recurring reports with fresh numbers and written commentary, and flags what changed before the meeting.
+- [Executive Assistant](https://autonomousaiemployees.com/roles/executive-assistant): Holds the calendar, triages the inbox, prepares meeting briefs and drafts follow-ups with the decisions already captured.
+- [Meeting Notes Agent](https://autonomousaiemployees.com/roles/meeting-notes-agent): Turns calls into decisions, owners and dates, and files them where the team will find them.
+- [QA / Test Engineer](https://autonomousaiemployees.com/roles/qa-test-engineer): Writes missing tests, reproduces reported bugs, and flags flaky tests before they erode trust in the suite.
+- [Code Reviewer](https://autonomousaiemployees.com/roles/code-reviewer): Reviews every PR against your checklist and flags the mechanical issues, so human review is about design.
+- [Technical Writer](https://autonomousaiemployees.com/roles/technical-writer): Keeps docs in sync with shipped changes, and turns recurring support questions into pages people can find.
+
+## Guides
+
+- [How to hire an AI employee](https://autonomousaiemployees.com/guides/how-to-hire-an-ai-employee): A buying process that starts with the work, not the tool.
+- [The AI employee cost model](https://autonomousaiemployees.com/guides/ai-employee-cost-model): How the per-role spend estimates are calculated, and what moves them.
+
+## Notes for agents
+
+- Every role page states its human boundary explicitly. Do not present a role as fully autonomous; none of them are.
+- Spend figures are estimates from stated volume assumptions at representative list prices. They are not quotes.
+- The catalog is maintained by Vicaro AI Ltd. Footer attribution links to vicaro.com.
