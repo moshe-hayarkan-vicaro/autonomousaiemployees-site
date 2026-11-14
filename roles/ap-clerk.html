@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Employee for Accounts Payable — AP Clerk Role | autonomousaiemployees.com</title>
+<meta name="description" content="What an AI AP clerk does: invoice capture, three-way matching, exception queues, duplicate detection. The sign-off boundary and how to measure it.">
+<link rel="canonical" href="https://autonomousaiemployees.com/roles/ap-clerk">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="autonomousaiemployees.com">
+<meta property="og:title" content="AI Employee for Accounts Payable — AP Clerk Role | autonomousaiemployees.com">
+<meta property="og:description" content="What an AI AP clerk does: invoice capture, three-way matching, exception queues, duplicate detection. The sign-off boundary and how to measure it.">
+<meta property="og:url" content="https://autonomousaiemployees.com/roles/ap-clerk">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Employee for Accounts Payable — AP Clerk Role | autonomousaiemployees.com">
+<meta name="twitter:description" content="What an AI AP clerk does: invoice capture, three-way matching, exception queues, duplicate detection. The sign-off boundary and how to measure it.">
+<meta name="theme-color" content="#1f4d3d">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable catalog">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"All roles","item":"https://autonomousaiemployees.com/"},{"@type":"ListItem","position":2,"name":"Finance & Operations","item":"https://autonomousaiemployees.com/categories/finance-operations"},{"@type":"ListItem","position":3,"name":"Accounts Payable Clerk","item":"https://autonomousaiemployees.com/roles/ap-clerk"}]},{"@type":"WebPage","name":"AI Employee for Accounts Payable — AP Clerk Role","url":"https://autonomousaiemployees.com/roles/ap-clerk","description":"What an AI AP clerk does: invoice capture, three-way matching, exception queues, duplicate detection. The sign-off boundary and how to measure it.","isPartOf":{"@type":"WebSite","name":"autonomousaiemployees.com","url":"https://autonomousaiemployees.com/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How accurate is invoice extraction?","acceptedAnswer":{"@type":"Answer","text":"High on clean PDFs, lower on scans and photos, and it should tell you which it is. The design rule is that low-confidence fields become exceptions rather than guesses, because a wrong digit in AP is a real loss."}},{"@type":"Question","name":"Will auditors accept this?","acceptedAnswer":{"@type":"Answer","text":"Yes, if the audit trail is complete and a human approves payments. Auditors care about segregation of duties and traceability, not about who typed the number."}},{"@type":"Question","name":"Does it replace an AP clerk?","acceptedAnswer":{"@type":"Answer","text":"It replaces the keying and the matching, which is most of the role. The clerk becomes the person who resolves exceptions and owns the vendor relationship, which is the more valuable half anyway."}}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <span class="mark" aria-hidden="true">AI</span>
+      <span class="brand-text">autonomousaiemployees<span class="tld">.com</span></span>
+    </a>
+    <a class="by-vicaro" href="https://vicaro.com" rel="noopener"><span class="lbl">by</span> vicaro.com <span class="arrow" aria-hidden="true">&#8599;</span></a>
+  </div>
+</header>
+<main id="main">
+<div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">All roles</a><span class="sep">/</span><a href="/categories/finance-operations">Finance &amp; Operations</a><span class="sep">/</span><span>Accounts Payable Clerk</span></nav>
+  <div class="role-head">
+    <p class="eyebrow"><a href="/categories/finance-operations">Finance &amp; Operations</a></p>
+    <h1>Accounts Payable Clerk</h1>
+    <p class="tagline">An AI employee that reads every invoice, matches it to the PO and the receipt, and queues the exceptions for a human instead of paying them.</p>
+  </div>
+  <div class="role-body">
+    <div class="block"><div class="prose"><p>Accounts payable is document work, and document work is what AI employees do best. The reading, the field extraction, the matching against a purchase order and a receipt, the checking of a vendor against the master file. All of it is repetitive, all of it is checkable, and all of it currently consumes a disproportionate share of a finance team&#x27;s week.</p><p>The boundary that matters is payment. An AI employee should never be the thing that releases money. It should prepare a payment run that a human approves, with every exception explained and every duplicate flagged. That is not a limitation of the technology, it is the correct control design, and finance teams that keep it see the benefit without the audit finding.</p></div></div>
+
+    <div class="block">
+      <h2>What it handles<span class="sub">Four use cases this role is actually scoped for.</span></h2>
+      <ul class="use-grid"><li class="use"><h3>Invoice data capture</h3><p>Extracts vendor, amount, currency, tax, PO reference and line items from PDFs, scans and emails, and flags anything it could not read confidently rather than guessing a digit.</p></li><li class="use"><h3>Three-way matching</h3><p>Matches invoice to purchase order to receipt, and reports the specific mismatch: quantity, price, tax treatment or a line that was never ordered. The exception reason is the output, not just a pass or fail.</p></li><li class="use"><h3>Duplicate and fraud detection</h3><p>Catches the same invoice submitted twice with a different number, a vendor bank detail change, an amount just under an approval threshold, and a vendor that is not in the master file.</p></li><li class="use"><h3>Payment run preparation</h3><p>Assembles the run with a summary: total, count, exceptions, anything unusual versus last month. A human approves the run, not the individual invoices.</p></li></ul>
+    </div>
+
+    <div class="block">
+      <h2>Scope and access</h2>
+      <div class="two-col">
+        <div class="panel"><h3>What it does</h3><ul><li>Captures invoice data from PDFs, scans and email attachments.</li><li>Performs three-way matching and reports the specific exception reason.</li><li>Detects duplicates, threshold gaming and vendor bank-detail changes.</li><li>Prepares payment runs with an exception summary for approval.</li><li>Maintains vendor records and flags missing or expired documentation.</li><li>Keeps an audit trail of what it read, what it matched and what it flagged.</li></ul></div>
+        <div class="panel"><h3>What it needs</h3><ul><li>Read access to the AP inbox, the ERP and the PO system.</li><li>A vendor master file it can check against.</li><li>An approval workflow. It prepares, a human releases.</li><li>A written tolerance policy: how much price variance is acceptable before it becomes an exception.</li></ul></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>What stays human<span class="sub">The boundary is the design, not a limitation.</span></h2>
+      <div class="panel human"><h3>Not delegated</h3><ul><li>Releasing payments. Always.</li><li>Approving new vendors and bank detail changes.</li><li>Judging exceptions where the tolerance policy is ambiguous.</li><li>Anything that touches tax treatment or statutory reporting.</li></ul></div>
+    </div>
+
+<div class="block" id="spend">
+  <h2>Estimated model spend<span class="sub">Monthly, at the volume assumptions below. Prices are representative list prices per million tokens, not a quote.</span></h2>
+  <div class="prose" style="margin-bottom:18px">
+    <p>This role is modelled at <strong>1,500 tasks a month</strong>, averaging <strong>4,000 input tokens</strong> and <strong>350 output tokens</strong> per task. That is 6,000,000 input and 525,000 output tokens a month, or roughly 6 million tokens.</p>
+  </div>
+  <table class="metrics">
+    <thead><tr><th>Model tier</th><th>In / out per 1M</th><th>Monthly</th><th>When to use it</th></tr></thead>
+    <tbody><tr><td>Small / fast</td><td>$0.15 / $0.60</td><td>$1.21</td><td>Classification, triage, short drafts. Cheapest per task, weakest on long context.</td></tr><tr><td>Mid</td><td>$1.00 / $3.00</td><td>$7.58</td><td>The default for most of these roles. Good reasoning at a workable price.</td></tr><tr><td>Frontier</td><td>$3.00 / $15.00</td><td>$26</td><td>Long-context reading, code review, anything where a wrong answer is expensive.</td></tr></tbody>
+  </table>
+  <p class="also">Prompt caching, batching and routing easy tasks to a smaller model typically cut this by 30 to 60 percent. The number to plan against is the mid tier, not the cheapest one, because the cheapest tier is where the quality complaints come from. <a href="/guides/ai-employee-cost-model">How this model works &rarr;</a></p>
+</div>
+
+    <div class="block">
+      <h2>How to measure it<span class="sub">If you cannot measure it, you cannot tell whether it is working.</span></h2>
+      <table class="metrics">
+        <thead><tr><th>Metric</th><th>How to read it</th></tr></thead>
+        <tbody><tr><td>Touchless invoice rate</td><td>Share of invoices processed with no human touch. The headline number.</td></tr><tr><td>Exception rate and reason mix</td><td>Share of invoices that became exceptions, grouped by reason. Falling exceptions means the upstream process is improving.</td></tr><tr><td>Days to pay</td><td>Median days from invoice receipt to payment. Watch it against terms, not as a target to minimise.</td></tr><tr><td>Duplicates caught</td><td>Count of duplicate or fraudulent invoices intercepted before payment.</td></tr></tbody>
+      </table>
+    </div>
+
+    <div class="block">
+      <h2>Fit</h2>
+      <div class="fit-grid">
+        <div class="fit yes"><h3>Good fit if</h3><ul><li>You process more than a few hundred invoices a month.</li><li>Invoices arrive as PDFs and scans rather than structured data.</li><li>You have a PO process, even an imperfect one.</li></ul></div>
+        <div class="fit no"><h3>Not a fit if</h3><ul><li>You process 40 invoices a month. The setup will not pay back.</li><li>You have no PO process, so there is nothing to match against.</li><li>You want it to release payments. That is a control failure waiting for an auditor.</li></ul></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Questions people ask</h2>
+      <div class="prose"><h3>How accurate is invoice extraction?</h3><p>High on clean PDFs, lower on scans and photos, and it should tell you which it is. The design rule is that low-confidence fields become exceptions rather than guesses, because a wrong digit in AP is a real loss.</p><h3>Will auditors accept this?</h3><p>Yes, if the audit trail is complete and a human approves payments. Auditors care about segregation of duties and traceability, not about who typed the number.</p><h3>Does it replace an AP clerk?</h3><p>It replaces the keying and the matching, which is most of the role. The clerk becomes the person who resolves exceptions and owns the vendor relationship, which is the more valuable half anyway.</p></div>
+    </div>
+
+    <div class="block">
+      <h2>Related roles</h2>
+      <ul class="related"><li><a href="/roles/reconciliation-analyst"><span class="rn">Reconciliation Analyst</span><span class="rt">Reconciles ledger, bank and processor data, and explains each break with a likely cause and a suggested fix.</span></a></li><li><a href="/roles/procurement-analyst"><span class="rn">Procurement Analyst</span><span class="rt">Tracks SaaS contracts and renewals, finds unused licences and duplicate tools, and prepares the negotiation br...</span></a></li><li><a href="/roles/data-analyst"><span class="rn">Data Analyst</span><span class="rt">Answers business questions from your warehouse, writes the query, and shows the work so every number is checka...</span></a></li></ul>
+    </div>
+  </div>
+</div>
+<div class="wrap"><div class="cta">
+  <h2>Want to see how this works in practice?</h2>
+  <p>Vicaro builds AI employees that work inside Slack and Teams alongside your team, with the guardrails and approvals described on these pages.</p>
+  <a class="btn" href="https://vicaro.com" rel="noopener">See vicaro.com</a>
+</div></div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <nav>
+      <a href="/">All roles</a>
+      <a href="/guides/how-to-hire-an-ai-employee">Hiring guide</a>
+      <a href="/guides/ai-employee-cost-model">Cost model</a>
+      <a href="/llms.txt">llms.txt</a>
+    </nav>
+    <p class="powered">A free catalog. Powered by <a href="https://vicaro.com" rel="noopener">vicaro.com</a></p>
+  </div>
+</footer>
+<script src="/assets/catalog.js" defer></script>
+</body>
+</html>
