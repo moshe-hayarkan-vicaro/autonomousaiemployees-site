@@ -1,63 +1,54 @@
-/* autonomousaiemployees.com - catalog filter */
+/* autonomousaiemployees.com — catalog search. No dependencies. */
 (function () {
-  'use strict';
+  var input = document.getElementById('q');
+  if (!input) return;
 
-  var q = document.getElementById('q');
-  var chips = document.getElementById('chips');
-  var countEl = document.getElementById('filtercount');
-  var cards = Array.prototype.slice.call(document.querySelectorAll('.role-card'));
-  var sections = Array.prototype.slice.call(document.querySelectorAll('.cat'));
-  var activeCat = 'all';
+  var cards = [].slice.call(document.querySelectorAll('.role-card'));
+  var sections = [].slice.call(document.querySelectorAll('.section'));
+  var empty = document.getElementById('empty');
+  var catNav = document.querySelector('.cat-nav');
 
-  if (!q || !chips || !cards.length) return;
+  function norm(s) { return (s || '').toLowerCase(); }
 
   function apply() {
-    var term = (q.value || '').trim().toLowerCase();
+    var q = norm(input.value).trim();
     var shown = 0;
 
-    cards.forEach(function (card) {
-      var catOk = activeCat === 'all' || card.getAttribute('data-cat') === activeCat;
-      var textOk = !term || (card.textContent || '').toLowerCase().indexOf(term) !== -1;
-      var visible = catOk && textOk;
-      card.classList.toggle('hidden', !visible);
-      if (visible) shown++;
+    cards.forEach(function (c) {
+      var hay = norm(c.getAttribute('data-name')) + ' ' +
+                norm(c.getAttribute('data-uses')) + ' ' +
+                norm(c.getAttribute('data-cat')) + ' ' +
+                norm(c.textContent);
+      var hit = !q || hay.indexOf(q) !== -1;
+      c.style.display = hit ? '' : 'none';
+      if (hit) shown++;
     });
 
-    sections.forEach(function (sec) {
-      var any = sec.querySelectorAll('.role-card:not(.hidden)').length > 0;
-      sec.classList.toggle('hidden', !any);
-    });
-
-    if (!term && activeCat === 'all') {
-      countEl.textContent = '';
-    } else {
-      countEl.textContent = shown + (shown === 1 ? ' role matches' : ' roles match');
-    }
-  }
-
-  chips.addEventListener('click', function (e) {
-    var btn = e.target.closest('.chip');
-    if (!btn) return;
-    Array.prototype.forEach.call(chips.querySelectorAll('.chip'), function (c) {
-      c.classList.remove('on');
-    });
-    btn.classList.add('on');
-    activeCat = btn.getAttribute('data-cat') || 'all';
-    apply();
-  });
-
-  q.addEventListener('input', apply);
-
-  var hash = (location.hash || '').replace('#', '');
-  if (hash && hash !== 'roles') {
-    var match = chips.querySelector('.chip[data-cat="' + hash + '"]');
-    if (match) {
-      Array.prototype.forEach.call(chips.querySelectorAll('.chip'), function (c) {
-        c.classList.remove('on');
+    sections.forEach(function (s) {
+      var grid = s.querySelector('.role-grid');
+      if (!grid) return;
+      var any = [].slice.call(grid.querySelectorAll('.role-card')).some(function (c) {
+        return c.style.display !== 'none';
       });
-      match.classList.add('on');
-      activeCat = hash;
-      apply();
-    }
+      s.style.display = any ? '' : 'none';
+    });
+
+    if (empty) empty.className = shown === 0 ? 'empty-note on' : 'empty-note';
+    if (catNav) catNav.style.display = q ? 'none' : '';
   }
+
+  input.addEventListener('input', apply);
+
+  try {
+    var p = new URLSearchParams(window.location.search);
+    var q0 = p.get('q');
+    if (q0) { input.value = q0; apply(); }
+  } catch (e) {}
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === '/' && document.activeElement !== input) {
+      e.preventDefault();
+      input.focus();
+    }
+  });
 })();
