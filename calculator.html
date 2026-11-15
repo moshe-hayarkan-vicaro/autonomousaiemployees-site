@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Coworker TCO Calculator - the real cost of an AI employee</title>
+<meta name="description" content="A free calculator for the fully-loaded cost of an AI coworker versus a human hire: salary, overhead, tooling, attrition, oversight, ramp time, and the coverage input most calculators leave out.">
+<link rel="canonical" href="https://autonomousaiemployees.com/calculator">
+<meta property="og:title" content="AI Coworker TCO Calculator">
+<meta property="og:description" content="Model the fully-loaded cost of an AI employee against a human hire. Free, no signup.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://autonomousaiemployees.com/calculator">
+<link rel="stylesheet" href="/assets/calc.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"AI Coworker TCO Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Model the fully-loaded annual cost of an AI coworker against a human hire."}
+</script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="/">autonomous<span>ai</span>employees</a>
+    <nav class="site">
+      <a href="/#roles">All roles</a>
+      <a href="/guides/how-to-hire-an-ai-employee">How to choose</a>
+      <a href="/calculator">Cost calculator</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero wrap">
+  <span class="eyebrow">Free tool &middot; no signup</span>
+  <h1>What does an AI coworker actually cost?</h1>
+  <p class="lede">Vendors quote a monthly seat price. That number is not your cost. This calculator builds the fully-loaded annual figure for an AI employee and puts it next to the fully-loaded cost of the human role it partly replaces.</p>
+</section>
+
+<section class="wrap" id="calculator">
+  <div class="calc">
+
+    <form class="card" id="inputs" autocomplete="off">
+      <h2>The role</h2>
+
+      <div class="row2">
+        <div class="field">
+          <label for="roles">Roles to fill</label>
+          <input type="number" id="roles" value="3" min="1" max="500" step="1">
+        </div>
+        <div class="field">
+          <label for="salary">Base salary per role</label>
+          <input type="number" id="salary" value="95000" min="0" step="1000">
+          <span class="hint">Annual, USD, before overhead.</span>
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label for="overhead">Benefits &amp; overhead</label>
+          <input type="number" id="overhead" value="28" min="0" max="200" step="1">
+          <span class="hint">% on top of salary. Payroll tax, health, equipment, space.</span>
+        </div>
+        <div class="field">
+          <label for="tooling">Seats &amp; tooling per role</label>
+          <input type="number" id="tooling" value="3500" min="0" step="100">
+          <span class="hint">Annual software licences the role needs.</span>
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label for="ramp">Ramp to productivity</label>
+          <input type="number" id="ramp" value="4" min="0" max="24" step="1">
+          <span class="hint">Months at partial output for a new human hire.</span>
+        </div>
+        <div class="field">
+          <label for="attrition">Attrition cost per role</label>
+          <input type="number" id="attrition" value="12000" min="0" step="500">
+          <span class="hint">Annualised recruiting and lost output. Set 0 to ignore.</span>
+        </div>
+      </div>
+
+      <h2 style="margin-top:26px">The AI coworker</h2>
+
+      <div class="row2">
+        <div class="field">
+          <label for="agent">Agent cost per role / month</label>
+          <input type="number" id="agent" value="450" min="0" step="25">
+          <span class="hint">The seat price the vendor quotes you.</span>
+        </div>
+        <div class="field">
+          <label for="platform">Platform &amp; integration</label>
+          <input type="number" id="platform" value="6000" min="0" step="500">
+          <span class="hint">Annual. Connectors, licences, the plumbing around it.</span>
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label for="oversight">Human oversight</label>
+          <input type="number" id="oversight" value="3" min="0" max="40" step="0.5">
+          <span class="hint">Hours per week per role spent reviewing its work.</span>
+        </div>
+        <div class="field">
+          <label for="rate">Oversight hourly cost</label>
+          <input type="number" id="rate" value="65" min="0" step="5">
+          <span class="hint">Fully loaded hourly cost of the person reviewing.</span>
+        </div>
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label for="airmap">Agent onboarding, one-time</label>
+          <input type="number" id="airmap" value="1500" min="0" step="250">
+          <span class="hint">Setup, configuration, and the first month of tuning.</span>
+        </div>
+        <div class="field">
+          <label for="coverage">Work covered vs a human</label>
+          <input type="number" id="coverage" value="70" min="5" max="100" step="5">
+          <span class="hint">% of the role it actually handles. The input that matters most.</span>
+        </div>
+      </div>
+    </form>
+
+    <div class="results">
+      <div class="card">
+        <h2>Net annual difference</h2>
+        <p class="big" id="savings">&mdash;</p>
+        <p class="sub" id="savingsSub">net annual difference</p>
+
+        <div class="kpis">
+          <div class="kpi"><div class="k">Human, fully loaded</div><div class="v" id="humanTotal">&mdash;</div></div>
+          <div class="kpi"><div class="k">AI, fully loaded</div><div class="v" id="aiTotal">&mdash;</div></div>
+          <div class="kpi"><div class="k">3-year TCO delta</div><div class="v" id="threeYear">&mdash;</div></div>
+          <div class="kpi"><div class="k">Payback</div><div class="v" id="payback">&mdash;</div></div>
+        </div>
+
+        <div class="bars">
+          <div class="bar-row">
+            <div class="lbl"><span>Human</span><b id="humanBarLabel">&mdash;</b></div>
+            <div class="track"><div class="fill human" id="humanBar" style="width:100%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="lbl"><span>AI coworker</span><b id="aiBarLabel">&mdash;</b></div>
+            <div class="track"><div class="fill ai" id="aiBar" style="width:0%"></div></div>
+          </div>
+        </div>
+
+        <div class="breakdown">
+          <table>
+            <thead><tr><th>Line item</th><th>Annual</th></tr></thead>
+            <tbody id="breakdownBody"></tbody>
+          </table>
+        </div>
+
+        <p class="sub" id="perHour" style="margin-top:16px"></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="content alt" id="method">
+  <div class="wrap">
+    <h2>How the model works</h2>
+    <p>The calculator compares two ways of getting the same work done. It does not compare a salary to a subscription, because that comparison is always wrong in the same direction: it flatters the AI.</p>
+
+    <h3>What goes into the human side</h3>
+    <ul>
+      <li><strong>Base salary</strong>, gross annual.</li>
+      <li><strong>Benefits and overhead</strong> as a percentage: employer payroll tax, health cover, pension match, equipment, desk space, and the HR cost of administering all of it. 25 to 35 percent is the normal band for a salaried knowledge worker in the US and Western Europe.</li>
+      <li><strong>Seats and tooling</strong>: the software licences the role needs to function. These do not disappear when the role is automated, they move to the AI side, but they are real cost on the human side today.</li>
+      <li><strong>Ramp loss</strong>: a new hire is not fully productive on day one. The model charges half a year of salary across the ramp period, which is a conservative middle estimate.</li>
+      <li><strong>Attrition</strong>: recruiting cost plus the output lost while the seat is empty, annualised. Set it to zero if you want to ignore it.</li>
+    </ul>
+
+    <h3>What goes into the AI side</h3>
+    <ul>
+      <li><strong>Agent seats</strong>: the monthly price times twelve, per role.</li>
+      <li><strong>Platform and integration</strong>: the annual cost of the connectors, licences, and plumbing around the agent. This is the line vendors leave out of their own maths.</li>
+      <li><strong>Human oversight</strong>: hours per week spent reviewing, correcting, and escalating, priced at the reviewer's fully loaded hourly cost. This is the line that decides whether the whole thing works.</li>
+      <li><strong>Onboarding</strong>: one-time setup and tuning, counted in year one.</li>
+    </ul>
+
+    <h3>Why coverage is the input that matters</h3>
+    <p>An AI employee does not do the whole job. It does a share of it, and the rest still needs a person. Coverage is that share, and it is the number every other calculator quietly assumes is 100 percent. At 70 percent coverage the saving is real but smaller than the headline. At 40 percent it often disappears once oversight is priced honestly. Move the slider and watch the payback period, not the annual figure.</p>
+
+    <h3>What this model deliberately does not do</h3>
+    <p>It does not assume you make anyone redundant. It compares the cost of the work, not the cost of the org chart. If the remaining share of the role still needs a full-time person, the saving is smaller than the headline number, and you should model it that way rather than discovering it in month nine.</p>
+  </div>
+</section>
+
+<section class="content" id="hidden-costs">
+  <div class="wrap">
+    <h2>The costs people forget</h2>
+    <p>Every failed business case for an AI employee fails on one of these four lines. They are not exotic, they are just easy to leave out of a spreadsheet built to reach a conclusion.</p>
+
+    <h3>Oversight is a real job</h3>
+    <p>Someone has to read what the agent produced, catch the confident wrong answer, and decide what to do about it. If that is two hours a week, fine. If it is fifteen, you have not removed a role, you have added a reviewer. Price the hours at the reviewer's real cost, not at zero.</p>
+
+    <h3>Integration is not free</h3>
+    <p>An agent that cannot read your systems is a chatbot. Connecting it to the CRM, the helpdesk, the ledger, and the document store is engineering work, and it recurs every time one of those systems changes.</p>
+
+    <h3>The remaining share still needs a person</h3>
+    <p>If the agent covers 70 percent, the other 30 percent does not vanish. Sometimes it consolidates into an existing role. Sometimes it becomes its own part-time job. Either way it has a cost, and the honest model includes it.</p>
+
+    <h3>Quality drift is invisible until it is not</h3>
+    <p>An agent's output degrades quietly when the underlying documentation goes stale. The cost shows up as rework, complaints, or a wrong decision, months later. Budget for a periodic audit, because nobody gets it for free.</p>
+  </div>
+</section>
+
+<section class="content alt">
+  <div class="wrap">
+    <h2>Good fit, bad fit</h2>
+
+    <h3>Good fit</h3>
+    <ul>
+      <li>High-volume work with a documented answer and a cheap way to check it.</li>
+      <li>Roles where the output is a draft a person reviews anyway, so the review cost already exists.</li>
+      <li>Work that is spiky, where you need capacity for six weeks and not six years.</li>
+      <li>Backlogs nobody has time for: reconciliation, link audits, ticket triage, renewal tracking.</li>
+    </ul>
+
+    <h3>Bad fit</h3>
+    <ul>
+      <li>Work where the definition of done is contested. If two humans disagree about what good looks like, an agent will not resolve it.</li>
+      <li>Relationship-owned revenue. Buyers can tell, and some of them care.</li>
+      <li>Anything where a wrong answer is expensive and hard to detect. Oversight cost scales with the cost of being wrong.</li>
+      <li>Roles that exist mainly to absorb ambiguity. Those are the last jobs to change, not the first.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="content">
+  <div class="wrap">
+    <h2>Questions people ask</h2>
+
+    <h3>Is the default coverage of 70 percent realistic?</h3>
+    <p>For a well-scoped back-office role with clean inputs, yes. For a role with messy inputs and judgement calls, it is optimistic. Move it to 40 or 50 and watch what happens to the payback period. That sensitivity is the point of the tool.</p>
+
+    <h3>Should I include the cost of the person who manages the agent?</h3>
+    <p>Yes, and that is the oversight line. If managing agents becomes a full-time job, model it as a full-time job. Some teams end up with one ops person supervising eight agents, which is a good ratio. Some end up with one per two, which is not.</p>
+
+    <h3>What about the human who remains to handle the rest?</h3>
+    <p>The calculator does not assume you make anyone redundant. It compares the cost of the work. If the remaining share still needs a full-time person, the saving is smaller than the headline number, and you should model it that way rather than discovering it in month nine.</p>
+
+    <h3>Why is there no ROI percentage?</h3>
+    <p>Because ROI percentages hide the denominator. A 400 percent return on a $5,000 spend is $20,000, which does not change a P&amp;L. Absolute annual dollars and payback months are the numbers that survive a finance review.</p>
+
+    <h3>Does this tool store my inputs?</h3>
+    <p>No. Everything runs in your browser. Nothing is sent anywhere, and there is no account.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <nav>
+      <a href="/">All roles</a>
+      <a href="/guides/how-to-hire-an-ai-employee">How to choose</a>
+      <a href="/calculator">Cost calculator</a>
+    </nav>
+    <p class="powered">A free tool. Powered by <a href="https://vicaro.com" rel="noopener">vicaro.com</a></p>
+  </div>
+</footer>
+
+<script src="/assets/calc.js"></script>
+</body>
+</html>
