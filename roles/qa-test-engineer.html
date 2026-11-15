@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Employee for QA — Test Engineer Role | autonomousaiemployees.com</title>
+<meta name="description" content="What an AI QA engineer does: write missing tests, reproduce bugs from reports, triage flaky tests. Scope, access, what stays human, and how to measure it.">
+<link rel="canonical" href="https://autonomousaiemployees.com/roles/qa-test-engineer">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="autonomousaiemployees.com">
+<meta property="og:title" content="AI Employee for QA — Test Engineer Role | autonomousaiemployees.com">
+<meta property="og:description" content="What an AI QA engineer does: write missing tests, reproduce bugs from reports, triage flaky tests. Scope, access, what stays human, and how to measure it.">
+<meta property="og:url" content="https://autonomousaiemployees.com/roles/qa-test-engineer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Employee for QA — Test Engineer Role | autonomousaiemployees.com">
+<meta name="twitter:description" content="What an AI QA engineer does: write missing tests, reproduce bugs from reports, triage flaky tests. Scope, access, what stays human, and how to measure it.">
+<meta name="theme-color" content="#1f4d3d">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable catalog">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"All roles","item":"https://autonomousaiemployees.com/"},{"@type":"ListItem","position":2,"name":"Engineering & Product","item":"https://autonomousaiemployees.com/categories/engineering-product"},{"@type":"ListItem","position":3,"name":"QA / Test Engineer","item":"https://autonomousaiemployees.com/roles/qa-test-engineer"}]},{"@type":"WebPage","name":"AI Employee for QA \u2014 Test Engineer Role","url":"https://autonomousaiemployees.com/roles/qa-test-engineer","description":"What an AI QA engineer does: write missing tests, reproduce bugs from reports, triage flaky tests. Scope, access, what stays human, and how to measure it.","isPartOf":{"@type":"WebSite","name":"autonomousaiemployees.com","url":"https://autonomousaiemployees.com/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will it write good tests?","acceptedAnswer":{"@type":"Answer","text":"It writes tests that pass, which is not the same thing. Review them for whether they assert the right behaviour. The common failure is a test that asserts the current implementation rather than the intended behaviour, which then blocks a correct change."}},{"@type":"Question","name":"Can it fix the bugs too?","acceptedAnswer":{"@type":"Answer","text":"It can propose a fix, and sometimes the proposal is good. The value is highest when it stops at the reproduction, because that is the part humans skip and the part that makes the fix fast."}},{"@type":"Question","name":"Does it replace a QA engineer?","acceptedAnswer":{"@type":"Answer","text":"It replaces the writing of routine tests and the triage. The QA engineer still owns strategy, what to test, and the judgement about risk."}}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <span class="mark" aria-hidden="true">AI</span>
+      <span class="brand-text">autonomousaiemployees<span class="tld">.com</span></span>
+    </a>
+    <a class="by-vicaro" href="https://vicaro.com" rel="noopener"><span class="lbl">by</span> vicaro.com <span class="arrow" aria-hidden="true">&#8599;</span></a>
+  </div>
+</header>
+<main id="main">
+<div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">All roles</a><span class="sep">/</span><a href="/categories/engineering-product">Engineering &amp; Product</a><span class="sep">/</span><span>QA / Test Engineer</span></nav>
+  <div class="role-head">
+    <p class="eyebrow"><a href="/categories/engineering-product">Engineering &amp; Product</a></p>
+    <h1>QA / Test Engineer</h1>
+    <p class="tagline">An AI employee that writes the tests nobody wrote, reproduces the bugs nobody could, and keeps the suite honest.</p>
+  </div>
+  <div class="role-body">
+    <div class="block"><div class="prose"><p>Every codebase has the same gap: the paths that are tested are the ones that were easy to test, and the paths that break in production are the ones nobody wrote a test for. Not from laziness, but because writing a test for an awkward path takes an hour and the sprint does not have an hour.</p><p>An AI employee is good at exactly that hour of work. It reads the code, works out what the untested branches are, and writes the tests. It also does the other half of QA that consumes time: turning a vague bug report into a reproducible case, and working out why a test is flaky. What it should not do is decide that a change is safe to ship. That is a human judgement, and the role is scoped so a human always merges.</p></div></div>
+
+    <div class="block">
+      <h2>What it handles<span class="sub">Four use cases this role is actually scoped for.</span></h2>
+      <ul class="use-grid"><li class="use"><h3>Test coverage for untested paths</h3><p>Reads the code, identifies branches and error paths with no coverage, and writes tests for them. Prioritises by what would actually break in production rather than by what is easy to cover.</p></li><li class="use"><h3>Bug reproduction from reports</h3><p>Takes a support ticket or a vague report, works out the reproduction steps, writes a failing test that demonstrates the bug, and attaches it to the issue. Turns &#x27;it does not work&#x27; into something a developer can fix.</p></li><li class="use"><h3>Flaky test triage</h3><p>Identifies tests that fail intermittently, works out whether the cause is timing, ordering, shared state or a real race condition, and proposes a fix. Flaky suites get ignored, and an ignored suite is worse than none.</p></li><li class="use"><h3>Regression test from incidents</h3><p>After an incident, writes the test that would have caught it, so the same failure cannot return silently.</p></li></ul>
+    </div>
+
+    <div class="block">
+      <h2>Scope and access</h2>
+      <div class="two-col">
+        <div class="panel"><h3>What it does</h3><ul><li>Writes tests for uncovered branches and error paths, prioritised by production risk.</li><li>Reproduces reported bugs and attaches a failing test to the issue.</li><li>Triages flaky tests and proposes fixes.</li><li>Writes regression tests from post-incident reviews.</li><li>Reviews pull requests against a test checklist and flags missing coverage.</li><li>Maintains test fixtures and reports suite health over time.</li></ul></div>
+        <div class="panel"><h3>What it needs</h3><ul><li>Read access to the repository and the CI system.</li><li>A test framework and a convention for where tests live.</li><li>A rule that it opens pull requests rather than pushing to main.</li><li>Access to the issue tracker so it can link tests to bugs.</li></ul></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>What stays human<span class="sub">The boundary is the design, not a limitation.</span></h2>
+      <div class="panel human"><h3>Not delegated</h3><ul><li>Merging. Always a human.</li><li>Deciding what level of coverage is enough.</li><li>Judging whether a test asserts the right behaviour, which requires product intent.</li><li>Release sign-off.</li></ul></div>
+    </div>
+
+<div class="block" id="spend">
+  <h2>Estimated model spend<span class="sub">Monthly, at the volume assumptions below. Prices are representative list prices per million tokens, not a quote.</span></h2>
+  <div class="prose" style="margin-bottom:18px">
+    <p>This role is modelled at <strong>500 tasks a month</strong>, averaging <strong>12,000 input tokens</strong> and <strong>1,500 output tokens</strong> per task. That is 6,000,000 input and 750,000 output tokens a month, or roughly 6 million tokens.</p>
+  </div>
+  <table class="metrics">
+    <thead><tr><th>Model tier</th><th>In / out per 1M</th><th>Monthly</th><th>When to use it</th></tr></thead>
+    <tbody><tr><td>Small / fast</td><td>$0.15 / $0.60</td><td>$1.35</td><td>Classification, triage, short drafts. Cheapest per task, weakest on long context.</td></tr><tr><td>Mid</td><td>$1.00 / $3.00</td><td>$8.25</td><td>The default for most of these roles. Good reasoning at a workable price.</td></tr><tr><td>Frontier</td><td>$3.00 / $15.00</td><td>$29</td><td>Long-context reading, code review, anything where a wrong answer is expensive.</td></tr></tbody>
+  </table>
+  <p class="also">Prompt caching, batching and routing easy tasks to a smaller model typically cut this by 30 to 60 percent. The number to plan against is the mid tier, not the cheapest one, because the cheapest tier is where the quality complaints come from. <a href="/guides/ai-employee-cost-model">How this model works &rarr;</a></p>
+</div>
+
+    <div class="block">
+      <h2>How to measure it<span class="sub">If you cannot measure it, you cannot tell whether it is working.</span></h2>
+      <table class="metrics">
+        <thead><tr><th>Metric</th><th>How to read it</th></tr></thead>
+        <tbody><tr><td>Coverage on high-risk paths</td><td>Coverage of the code that actually breaks, not overall percentage. Overall coverage is a vanity number.</td></tr><tr><td>Bugs reproduced with a failing test</td><td>Share of reported bugs that arrive with a reproduction. Cuts developer triage time sharply.</td></tr><tr><td>Flaky test count</td><td>Tests failing intermittently. Should trend to zero, because a flaky suite gets ignored.</td></tr><tr><td>Escaped defects</td><td>Bugs reaching production that a test could have caught. The outcome measure.</td></tr></tbody>
+      </table>
+    </div>
+
+    <div class="block">
+      <h2>Fit</h2>
+      <div class="fit-grid">
+        <div class="fit yes"><h3>Good fit if</h3><ul><li>You have a test suite and known coverage gaps.</li><li>Bug reports arrive vague and cost developer time to triage.</li><li>Your CI is reliable enough to run the tests it writes.</li></ul></div>
+        <div class="fit no"><h3>Not a fit if</h3><ul><li>You have no tests at all. Start with a framework and a convention first.</li><li>Your build is so slow that more tests make it unusable.</li><li>You want it to merge its own work. Do not.</li></ul></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Questions people ask</h2>
+      <div class="prose"><h3>Will it write good tests?</h3><p>It writes tests that pass, which is not the same thing. Review them for whether they assert the right behaviour. The common failure is a test that asserts the current implementation rather than the intended behaviour, which then blocks a correct change.</p><h3>Can it fix the bugs too?</h3><p>It can propose a fix, and sometimes the proposal is good. The value is highest when it stops at the reproduction, because that is the part humans skip and the part that makes the fix fast.</p><h3>Does it replace a QA engineer?</h3><p>It replaces the writing of routine tests and the triage. The QA engineer still owns strategy, what to test, and the judgement about risk.</p></div>
+    </div>
+
+    <div class="block">
+      <h2>Related roles</h2>
+      <ul class="related"><li><a href="/roles/code-reviewer"><span class="rn">Code Reviewer</span><span class="rt">Reviews every PR against your checklist and flags the mechanical issues, so human review is about design.</span></a></li><li><a href="/roles/technical-writer"><span class="rn">Technical Writer</span><span class="rt">Keeps docs in sync with shipped changes, and turns recurring support questions into pages people can find.</span></a></li><li><a href="/roles/data-analyst"><span class="rn">Data Analyst</span><span class="rt">Answers business questions from your warehouse, writes the query, and shows the work so every number is checka...</span></a></li></ul>
+    </div>
+  </div>
+</div>
+<div class="wrap"><div class="cta">
+  <h2>Want to see how this works in practice?</h2>
+  <p>Vicaro builds AI employees that work inside Slack and Teams alongside your team, with the guardrails and approvals described on these pages.</p>
+  <a class="btn" href="https://vicaro.com" rel="noopener">See vicaro.com</a>
+</div></div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <nav>
+      <a href="/">All roles</a>
+      <a href="/guides/how-to-hire-an-ai-employee">Hiring guide</a>
+      <a href="/guides/ai-employee-cost-model">Cost model</a>
+      <a href="/llms.txt">llms.txt</a>
+    </nav>
+    <p class="powered">A free catalog. Powered by <a href="https://vicaro.com" rel="noopener">vicaro.com</a></p>
+  </div>
+</footer>
+<script src="/assets/catalog.js" defer></script>
+</body>
+</html>
