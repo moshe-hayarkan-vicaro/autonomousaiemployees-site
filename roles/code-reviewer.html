@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Employee for Code Review — Reviewer Role | autonomousaiemployees.com</title>
+<meta name="description" content="What an AI code reviewer does: first-pass PR review, checklist enforcement, security and dependency flags. Scope, access, and how to measure it.">
+<link rel="canonical" href="https://autonomousaiemployees.com/roles/code-reviewer">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="autonomousaiemployees.com">
+<meta property="og:title" content="AI Employee for Code Review — Reviewer Role | autonomousaiemployees.com">
+<meta property="og:description" content="What an AI code reviewer does: first-pass PR review, checklist enforcement, security and dependency flags. Scope, access, and how to measure it.">
+<meta property="og:url" content="https://autonomousaiemployees.com/roles/code-reviewer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Employee for Code Review — Reviewer Role | autonomousaiemployees.com">
+<meta name="twitter:description" content="What an AI code reviewer does: first-pass PR review, checklist enforcement, security and dependency flags. Scope, access, and how to measure it.">
+<meta name="theme-color" content="#1f4d3d">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable catalog">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"All roles","item":"https://autonomousaiemployees.com/"},{"@type":"ListItem","position":2,"name":"Engineering & Product","item":"https://autonomousaiemployees.com/categories/engineering-product"},{"@type":"ListItem","position":3,"name":"Code Reviewer","item":"https://autonomousaiemployees.com/roles/code-reviewer"}]},{"@type":"WebPage","name":"AI Employee for Code Review \u2014 Reviewer Role","url":"https://autonomousaiemployees.com/roles/code-reviewer","description":"What an AI code reviewer does: first-pass PR review, checklist enforcement, security and dependency flags. Scope, access, and how to measure it.","isPartOf":{"@type":"WebSite","name":"autonomousaiemployees.com","url":"https://autonomousaiemployees.com/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Will it be noisy?","acceptedAnswer":{"@type":"Answer","text":"If you let it comment on everything, yes. Scope it to a written checklist and suppress it on generated files. The measure is the share of comments developers act on, and if that is low, narrow the checklist rather than turning it off."}},{"@type":"Question","name":"Can it find real bugs?","acceptedAnswer":{"@type":"Answer","text":"Sometimes, and the ones it finds are usually the boring kind that humans skim past: an unhandled null, a missing await, an off-by-one. That is worth having, but do not expect it to catch design flaws."}},{"@type":"Question","name":"Does it replace human review?","acceptedAnswer":{"@type":"Answer","text":"No, and treating it as a replacement is how teams ship worse code with more confidence. It replaces the mechanical pass so the human pass can be about design."}}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <span class="mark" aria-hidden="true">AI</span>
+      <span class="brand-text">autonomousaiemployees<span class="tld">.com</span></span>
+    </a>
+    <a class="by-vicaro" href="https://vicaro.com" rel="noopener"><span class="lbl">by</span> vicaro.com <span class="arrow" aria-hidden="true">&#8599;</span></a>
+  </div>
+</header>
+<main id="main">
+<div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">All roles</a><span class="sep">/</span><a href="/categories/engineering-product">Engineering &amp; Product</a><span class="sep">/</span><span>Code Reviewer</span></nav>
+  <div class="role-head">
+    <p class="eyebrow"><a href="/categories/engineering-product">Engineering &amp; Product</a></p>
+    <h1>Code Reviewer</h1>
+    <p class="tagline">An AI employee that reviews every pull request against your checklist, so human review can focus on design instead of style.</p>
+  </div>
+  <div class="role-body">
+    <div class="block"><div class="prose"><p>Human code review is expensive and mostly spent on things a machine could check: naming, error handling, missing tests, an unhandled null, a dependency added without a reason. By the time a reviewer gets to the interesting question, whether the design is right, they have used their attention on the mechanical part.</p><p>An AI reviewer takes the mechanical pass. It comments on the diff against your written checklist, flags the security and dependency issues, and leaves the design conversation to a person. The important scoping is that it comments rather than blocks, and that its comments are specific enough to act on. A reviewer that says &#x27;consider improving error handling&#x27; is noise; one that says &#x27;this call can return null and line 42 dereferences it&#x27; is useful.</p></div></div>
+
+    <div class="block">
+      <h2>What it handles<span class="sub">Four use cases this role is actually scoped for.</span></h2>
+      <ul class="use-grid"><li class="use"><h3>First-pass PR review</h3><p>Reviews every pull request against a written checklist: error handling, input validation, logging, test coverage, naming, dead code. Comments with file and line, and stays quiet when there is nothing to say.</p></li><li class="use"><h3>Checklist enforcement</h3><p>Turns your team&#x27;s conventions into something that is actually checked on every PR, instead of a document nobody reads. The checklist becomes executable.</p></li><li class="use"><h3>Security and dependency flags</h3><p>Flags new dependencies, secrets in code, unsafe deserialisation, missing authorisation checks and injection-shaped patterns, with the specific line and the reason.</p></li><li class="use"><h3>Review load balancing</h3><p>Summarises a large PR so a human reviewer knows where to look first, and flags the files that carry the most risk. Makes a 40-file diff reviewable in ten minutes.</p></li></ul>
+    </div>
+
+    <div class="block">
+      <h2>Scope and access</h2>
+      <div class="two-col">
+        <div class="panel"><h3>What it does</h3><ul><li>Reviews every pull request against a written checklist.</li><li>Comments with file, line and a specific reason rather than general advice.</li><li>Flags security patterns, secrets and new dependencies.</li><li>Summarises large diffs and points at the risky parts.</li><li>Tracks which checklist items recur as problems and reports the pattern.</li><li>Stays silent on PRs with nothing to flag, so its comments keep their weight.</li></ul></div>
+        <div class="panel"><h3>What it needs</h3><ul><li>Read access to the repository and pull requests.</li><li>A written review checklist. Without one it will apply generic advice you did not ask for.</li><li>A rule that it comments and never approves or merges.</li><li>A way to suppress it on generated files and vendored code.</li></ul></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>What stays human<span class="sub">The boundary is the design, not a limitation.</span></h2>
+      <div class="panel human"><h3>Not delegated</h3><ul><li>Approving and merging. Always.</li><li>Design and architecture judgement.</li><li>Whether a change is worth making at all.</li><li>Anything involving product intent or user impact.</li></ul></div>
+    </div>
+
+<div class="block" id="spend">
+  <h2>Estimated model spend<span class="sub">Monthly, at the volume assumptions below. Prices are representative list prices per million tokens, not a quote.</span></h2>
+  <div class="prose" style="margin-bottom:18px">
+    <p>This role is modelled at <strong>800 tasks a month</strong>, averaging <strong>15,000 input tokens</strong> and <strong>800 output tokens</strong> per task. That is 12,000,000 input and 640,000 output tokens a month, or roughly 12 million tokens.</p>
+  </div>
+  <table class="metrics">
+    <thead><tr><th>Model tier</th><th>In / out per 1M</th><th>Monthly</th><th>When to use it</th></tr></thead>
+    <tbody><tr><td>Small / fast</td><td>$0.15 / $0.60</td><td>$2.18</td><td>Classification, triage, short drafts. Cheapest per task, weakest on long context.</td></tr><tr><td>Mid</td><td>$1.00 / $3.00</td><td>$14</td><td>The default for most of these roles. Good reasoning at a workable price.</td></tr><tr><td>Frontier</td><td>$3.00 / $15.00</td><td>$46</td><td>Long-context reading, code review, anything where a wrong answer is expensive.</td></tr></tbody>
+  </table>
+  <p class="also">Prompt caching, batching and routing easy tasks to a smaller model typically cut this by 30 to 60 percent. The number to plan against is the mid tier, not the cheapest one, because the cheapest tier is where the quality complaints come from. <a href="/guides/ai-employee-cost-model">How this model works &rarr;</a></p>
+</div>
+
+    <div class="block">
+      <h2>How to measure it<span class="sub">If you cannot measure it, you cannot tell whether it is working.</span></h2>
+      <table class="metrics">
+        <thead><tr><th>Metric</th><th>How to read it</th></tr></thead>
+        <tbody><tr><td>Mechanical issues caught pre-review</td><td>Issues the AI flagged that a human would otherwise have spent time on.</td></tr><tr><td>Human review time per PR</td><td>Median minutes. Should fall while review quality holds.</td></tr><tr><td>Comment usefulness</td><td>Share of comments a developer acts on. Below about half means the checklist is too broad.</td></tr><tr><td>Recurring issue types</td><td>Checklist items that keep appearing. Each one is a candidate for a lint rule instead.</td></tr></tbody>
+      </table>
+    </div>
+
+    <div class="block">
+      <h2>Fit</h2>
+      <div class="fit-grid">
+        <div class="fit yes"><h3>Good fit if</h3><ul><li>You have a review checklist or conventions worth enforcing.</li><li>Reviewers are a bottleneck.</li><li>Your team will act on specific comments.</li></ul></div>
+        <div class="fit no"><h3>Not a fit if</h3><ul><li>You have no conventions, so it will invent them.</li><li>Your team is small enough that review is not a bottleneck.</li><li>You want it to approve PRs. That removes the control that makes review meaningful.</li></ul></div>
+      </div>
+    </div>
+
+    <div class="block">
+      <h2>Questions people ask</h2>
+      <div class="prose"><h3>Will it be noisy?</h3><p>If you let it comment on everything, yes. Scope it to a written checklist and suppress it on generated files. The measure is the share of comments developers act on, and if that is low, narrow the checklist rather than turning it off.</p><h3>Can it find real bugs?</h3><p>Sometimes, and the ones it finds are usually the boring kind that humans skim past: an unhandled null, a missing await, an off-by-one. That is worth having, but do not expect it to catch design flaws.</p><h3>Does it replace human review?</h3><p>No, and treating it as a replacement is how teams ship worse code with more confidence. It replaces the mechanical pass so the human pass can be about design.</p></div>
+    </div>
+
+    <div class="block">
+      <h2>Related roles</h2>
+      <ul class="related"><li><a href="/roles/qa-test-engineer"><span class="rn">QA / Test Engineer</span><span class="rt">Writes missing tests, reproduces reported bugs, and flags flaky tests before they erode trust in the suite.</span></a></li><li><a href="/roles/technical-writer"><span class="rn">Technical Writer</span><span class="rt">Keeps docs in sync with shipped changes, and turns recurring support questions into pages people can find.</span></a></li><li><a href="/roles/data-analyst"><span class="rn">Data Analyst</span><span class="rt">Answers business questions from your warehouse, writes the query, and shows the work so every number is checka...</span></a></li></ul>
+    </div>
+  </div>
+</div>
+<div class="wrap"><div class="cta">
+  <h2>Want to see how this works in practice?</h2>
+  <p>Vicaro builds AI employees that work inside Slack and Teams alongside your team, with the guardrails and approvals described on these pages.</p>
+  <a class="btn" href="https://vicaro.com" rel="noopener">See vicaro.com</a>
+</div></div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <nav>
+      <a href="/">All roles</a>
+      <a href="/guides/how-to-hire-an-ai-employee">Hiring guide</a>
+      <a href="/guides/ai-employee-cost-model">Cost model</a>
+      <a href="/llms.txt">llms.txt</a>
+    </nav>
+    <p class="powered">A free catalog. Powered by <a href="https://vicaro.com" rel="noopener">vicaro.com</a></p>
+  </div>
+</footer>
+<script src="/assets/catalog.js" defer></script>
+</body>
+</html>
