@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Employee Cost Model — What It Actually Costs to Run One | autonomousaiemployees.com</title>
+<meta name="description" content="How to estimate what an AI employee costs to run: token volume per task, model tiers, prompt caching, routing and batching, plus worked examples from four roles.">
+<link rel="canonical" href="https://autonomousaiemployees.com/guides/ai-employee-cost-model">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="autonomousaiemployees.com">
+<meta property="og:title" content="The AI Employee Cost Model — What It Actually Costs to Run One | autonomousaiemployees.com">
+<meta property="og:description" content="How to estimate what an AI employee costs to run: token volume per task, model tiers, prompt caching, routing and batching, plus worked examples from four roles.">
+<meta property="og:url" content="https://autonomousaiemployees.com/guides/ai-employee-cost-model">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The AI Employee Cost Model — What It Actually Costs to Run One | autonomousaiemployees.com">
+<meta name="twitter:description" content="How to estimate what an AI employee costs to run: token volume per task, model tiers, prompt caching, routing and batching, plus worked examples from four roles.">
+<meta name="theme-color" content="#1f4d3d">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable catalog">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"All roles","item":"https://autonomousaiemployees.com/"},{"@type":"ListItem","position":2,"name":"AI employee cost model","item":"https://autonomousaiemployees.com/guides/ai-employee-cost-model"}]},{"@type":"Article","headline":"The AI employee cost model","url":"https://autonomousaiemployees.com/guides/ai-employee-cost-model","description":"How to estimate what an AI employee costs to run: token volume, model tiers, caching, and the four things that move the number most.","author":{"@type":"Organization","name":"Vicaro AI Ltd.","url":"https://vicaro.com"},"publisher":{"@type":"Organization","name":"Vicaro AI Ltd.","url":"https://vicaro.com"}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <span class="mark" aria-hidden="true">AI</span>
+      <span class="brand-text">autonomousaiemployees<span class="tld">.com</span></span>
+    </a>
+    <a class="by-vicaro" href="https://vicaro.com" rel="noopener"><span class="lbl">by</span> vicaro.com <span class="arrow" aria-hidden="true">&#8599;</span></a>
+  </div>
+</header>
+<main id="main">
+<div class="wrap-narrow">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">All roles</a><span class="sep">/</span><span>AI employee cost model</span></nav>
+  <div class="role-head">
+    <p class="eyebrow">Guide</p>
+    <h1>The AI employee cost model</h1>
+    <p class="tagline">Tokens per task, times tasks per month, times price per token. The arithmetic is easy. Being honest about the first two numbers is the hard part.</p>
+  </div>
+  <div class="role-body"><div class="prose">
+<p>Every role page on this site carries a monthly spend estimate. This page explains where those numbers come from, so you can check them against your own volume instead of trusting a figure someone put in a table.</p>
+
+<p>The short version: an AI employee costs roughly <em>tokens per task &times; tasks per month &times; price per token</em>, and the only hard part is being honest about the first two.</p>
+
+<h2>The three inputs</h2>
+
+<p><strong>Tasks per month.</strong> One task is one unit of work: one ticket triaged, one invoice read, one brief written, one pull request reviewed. This is the number people get wrong, usually by overestimating. Count a real week and multiply by 4.3.</p>
+
+<p><strong>Input tokens per task.</strong> Everything the model reads: the instructions, the retrieved documentation, the ticket history, the attached document. This is usually much larger than people expect, because retrieval adds context. A support ticket with help-centre articles attached is easily 3,000 to 5,000 input tokens even though the customer wrote 80 words.</p>
+
+<p><strong>Output tokens per task.</strong> What it writes back. Much smaller, typically 10 to 20 percent of input. A drafted reply is 300 to 500 tokens. A code review comment is 100. A report is 1,000 to 2,000.</p>
+
+<h2>Model tiers, and why the cheapest is usually wrong</h2>
+
+<p>Prices move, so the catalog uses three representative tiers rather than naming vendors. The shape of the market has been stable for a while: a small fast tier, a mid tier that most production work runs on, and a frontier tier for the tasks where a wrong answer is expensive.</p>
+
+<table class="metrics">
+<thead><tr><th>Tier</th><th>Per 1M in / out</th><th>What it is for</th></tr></thead>
+<tbody><tr><td>Small / fast</td><td>$0.15 / $0.60</td><td>Classification, triage, short drafts. Cheapest per task, weakest on long context.</td></tr><tr><td>Mid</td><td>$1.00 / $3.00</td><td>The default for most of these roles. Good reasoning at a workable price.</td></tr><tr><td>Frontier</td><td>$3.00 / $15.00</td><td>Long-context reading, code review, anything where a wrong answer is expensive.</td></tr></tbody>
+</table>
+
+<p>The instinct is to plan against the small tier and be pleasantly surprised. Do the opposite. The small tier is where the quality complaints come from, and the cost difference between small and mid is usually a few tens of dollars a month against a salary. Plan against mid, and treat any saving from routing easy tasks down as upside.</p>
+
+<h2>Worked examples</h2>
+
+<p>These are the actual assumptions behind four role pages, at the mid tier:</p>
+
+<table class="metrics">
+<thead><tr><th>Role</th><th>Tasks / mo</th><th>Input</th><th>Output</th><th>Monthly</th></tr></thead>
+<tbody><tr><td><a href="/roles/seo-analyst">SEO Analyst</a></td><td>400</td><td>3M</td><td>0M</td><td>$5.04</td></tr><tr><td><a href="/roles/customer-support-agent">Customer Support Agent</a></td><td>3,000</td><td>10M</td><td>1M</td><td>$15</td></tr><tr><td><a href="/roles/ap-clerk">Accounts Payable Clerk</a></td><td>1,500</td><td>6M</td><td>0M</td><td>$7.58</td></tr><tr><td><a href="/roles/code-reviewer">Code Reviewer</a></td><td>800</td><td>12M</td><td>0M</td><td>$14</td></tr></tbody>
+</table>
+
+<p>Two things stand out. First, the range is wide: a support agent at 3,000 tickets a month costs an order of magnitude more than an AP clerk at 1,500 invoices, because the ticket volume is higher and the context per ticket is comparable. Second, all of these numbers are small relative to the labour they replace, which is why the interesting question is never &ldquo;can we afford the tokens&rdquo; but &ldquo;is the output good enough to use&rdquo;.</p>
+
+<h2>The four things that move the number</h2>
+
+<p><strong>Prompt caching.</strong> If a large part of the input is the same every time (system instructions, a style guide, a policy document), caching it typically cuts the input cost by 50 to 90 percent on the cached portion. This is the single biggest lever and it is usually free to enable.</p>
+
+<p><strong>Retrieval discipline.</strong> Sending the whole help centre with every ticket is expensive and makes answers worse. Sending the three most relevant articles is cheaper and better. Retrieval quality is a cost decision as well as a quality decision.</p>
+
+<p><strong>Routing.</strong> Most tasks in a role are easy. Sending the easy 70 percent to the small tier and the hard 30 percent to mid typically cuts the bill by 40 percent with no visible quality change, provided you can classify reliably.</p>
+
+<p><strong>Batching.</strong> Non-urgent work (nightly reconciliation, weekly reporting, bulk classification) can run in batches at a discount. Anything a customer is waiting for cannot.</p>
+
+<h2>What is not in these numbers</h2>
+
+<p>The estimates cover model inference only. A real deployment also has:</p>
+
+<ul>
+<li><strong>Orchestration and tool calls.</strong> Every retrieval, API call and database query is either free or billed separately depending on the platform. At high volume this can exceed the model cost.</li>
+<li><strong>Human review time.</strong> The reviewer is the largest real cost in most deployments, and it is the one nobody puts in the spreadsheet. Budget 10 to 20 percent of a person for the first quarter.</li>
+<li><strong>Setup.</strong> Writing the boundary, the documentation, the metric definitions and the approval flow. This is the work that decides whether the deployment succeeds, and it is measured in days, not dollars.</li>
+</ul>
+
+<h2>How to sanity-check a vendor quote</h2>
+
+<p>Ask for tasks per month, tokens per task, and the model tier. If a vendor quotes a flat per-seat price with no volume assumption, they are either absorbing a lot of variance or they have not modelled it. Both are worth knowing before you sign.</p>
+
+<p>Then multiply it out yourself. The arithmetic is not hard, and doing it once will tell you more than any demo.</p>
+
+<p>Every role page on this site shows its own assumptions in the &ldquo;estimated model spend&rdquo; section, so you can substitute your own volume. Start from the <a href="/">catalog</a>.</p>
+</div></div>
+</div>
+<div class="wrap"><div class="cta">
+  <h2>Want to see how this works in practice?</h2>
+  <p>Vicaro builds AI employees that work inside Slack and Teams alongside your team, with the guardrails and approvals described on these pages.</p>
+  <a class="btn" href="https://vicaro.com" rel="noopener">See vicaro.com</a>
+</div></div>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <nav>
+      <a href="/">All roles</a>
+      <a href="/guides/how-to-hire-an-ai-employee">Hiring guide</a>
+      <a href="/guides/ai-employee-cost-model">Cost model</a>
+      <a href="/llms.txt">llms.txt</a>
+    </nav>
+    <p class="powered">A free catalog. Powered by <a href="https://vicaro.com" rel="noopener">vicaro.com</a></p>
+  </div>
+</footer>
+<script src="/assets/catalog.js" defer></script>
+</body>
+</html>
